@@ -787,7 +787,36 @@ ${app.notifications ? `<div class="notification">${app.notifications}</div>` : '
       $('.messageApp').removeClass('hidden');
     }, 100)
   }
-  
+
+
+	  //appstore App
+  function App_Store() {
+    if (!$('.appstoreApp').length) {
+      $('.mainScreen').append(`
+        <div class="appstoreApp hidden">
+	     <div class="appScreen">
+            <div class="contents">
+	            <iframe width="290" height="550" src="../apps/appstore.html">
+</iframe>
+			</div>
+		 </div>
+        </div>`
+      );
+      $('.appstoreApp').touchMov({
+        mov: 'y',
+        movUp: function (e) {
+          $(e.currentTarget).addClass('hidden');
+        }
+      });
+    }
+	
+	//Time out Function for youTube App
+    setTimeout(function () {
+      $('.appstoreApp').removeClass('hidden');
+    }, 100)
+  }
+
+	
   function renderUI(){
     paintApps(globalState.apps, $('.wrapperApps'), $('.wrapperDots'));
     if ($('.wrapperApps .app[data-app="widgetFullCalendar"]').length) {
