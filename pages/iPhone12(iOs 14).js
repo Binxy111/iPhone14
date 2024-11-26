@@ -1143,6 +1143,10 @@ ${app.notifications ? `<div class="notification">${app.notifications}</div>` : '
   $('body').on('click', '.app[data-app="appYouTube"]', function () {
    youTube();
   })
+
+	$('body').on('click', '.app[data-app="appAppStore"]', function () {
+   App_Store();
+  })
   
   $('body').on('click', '.app[data-indeck="3"]', function () {
    message_deck();
